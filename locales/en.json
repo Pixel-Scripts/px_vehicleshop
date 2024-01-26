@@ -1,0 +1,27 @@
+{
+    "interact_marker": "Press ~INPUT_PICKUP~ to interact",
+    "cardealer_action_cardealer": "Action Cardealer",
+    "cardealer_vehicle_saved": "Saved Vehicles",
+    "cardealer_buy_vehicle": "Buy Vehicle",
+    "cardealer_vehicle_purschased": "Vehicles purchased",
+    "cardealer_action_vechile_saved_show": "Show Vehicle",
+    "cardealer_action_vechile_saved_sell": "Sell Vehicle",
+    "cardealer_action_vechile_saved_return": "Return the vehicle",
+
+    "px_vehicleshop_vehicle_categories": "Vehicle Categories",
+    "px_vehicleshop_vehicle_list": "Vehicle List",
+    "px_vehicleshop_vehicle_info": "Vehicle Info",
+    "px_vehicleshop_test_drive": "Test Drive",
+    "px_vehicleshop_buy_vehicle": "Buy Vehicle",
+    "px_vehicleshop_notify": "Vehicle Shop",
+    "px_vehicleshop_notify_test_drive": "Test Drive not available",
+    "px_vehicleshop_no_money": "You do not have enough money",
+    "cardealer_alert_return_vehicle_header": "Are you sure you want to return the vehicle to the supplier?",
+    "cardealer_alert_return_vehicle_content": "You will receive 50% of the purchase price",
+    "px_vehicleshop_select_color": "Select Color",
+    "px_vehicleshop_textui_test_drive": "Time left %s seconds",
+    "px_vehicleshop_traction": "Traction",
+    "px_vehicleshop_brakes": "Brakes",
+    "px_vehicleshop_maxspeed": "Max Speed",
+    "px_vehicleshop_acceleration": "Acceleration"
+}
