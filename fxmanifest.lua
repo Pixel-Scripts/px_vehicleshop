@@ -6,19 +6,22 @@ author 'Haze'
 version '1.0.0'
 
 shared_scripts{
-    '@es_extended/imports.lua',
     '@ox_lib/init.lua',
     'shared/*.lua',
     'function/utils.lua'
 }
 
 client_scripts{
-    'client/*.lua'
+    'client/*.lua',
+    'client/bridge/esx.lua',
+    'client/bridge/qb.lua',
 }
 
 server_scripts{
     '@oxmysql/lib/MySQL.lua',
-    'server/*.lua'
+    'server/*.lua',
+    'server/bridge/esx.lua',
+    'server/bridge/qb.lua'
 }
 
 files {

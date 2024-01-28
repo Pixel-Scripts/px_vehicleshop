@@ -30,30 +30,6 @@ function GeneratePlate()
     return numberPlate
 end
 
-
-function GetPlayerIntoServer(data)
-    local isOnline = false
-    local xPlayer
-    debug("Data: "..data)
-    for k,v in ipairs(GetActivePlayers()) do
-        xPlayer = ESX.GetPlayerFromId(v)
-        debug(xPlayer.identifier)
-        if xPlayer.identifier == data then
-            isOnline = true
-        else
-            isOnline = false
-        end
-    end
-
-    if isOnline then
-        debug('Player Online')
-        return true, xPlayer.source
-    else
-        debug('Player Ofline')
-        return false
-    end
-end
-
 function InfoKeybind()
     Scale = RequestScaleformMovie("INSTRUCTIONAL_BUTTONS");
     while not HasScaleformMovieLoaded(Scale) do

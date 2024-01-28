@@ -4,6 +4,8 @@
 
 # **Frameworks**
 - ESX
+- QBcore
+
 # **Features**
 - Buy stock of vehicles and sell them
 - Test Drive

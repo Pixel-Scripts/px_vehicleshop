@@ -1,13 +1,13 @@
 lib.locale()
 Config = {}
 
-Config.EnableDebug = false
-Config.PositioMenu = "top-left"
+Config.EnableDebug = true
+Config.PositioMenu = "top-right"
 
 Config.TestDriveCoords = vector3(-889.877, -3205.54, 13.944)
 Config.TestDrive = true
 Config.TestDriveTime = 30 --seconds
-Config.PaymentSystem = "money"
+Config.PaymentSystem = "moeny"
 
 Config.Blip = {
     title = 'Pixel Vehicle Shop',
@@ -18,7 +18,7 @@ Config.Blip = {
 }
 
 Config.Shops = {
-    requiredJob = true,
+    requiredJob = false,
     jobName = 'cardealer',
     gradeBoss = 'Boss',
     bossMenu = vector3(-31.0925, -1106.57, 26.422),
@@ -84,43 +84,6 @@ Config.Vehicles = {
     {label = "chimera", category = "motorcycles", price = 1000},
     {label = "cliffhanger", category = "motorcycles", price = 1000},
     {label = "daemon", category = "motorcycles", price = 1000},
-    {label = "daemon2", category = "motorcycles", price = 1000},
-    {label = "defiler", category = "motorcycles", price = 1000},
-    {label = "diablous", category = "motorcycles", price = 1000},
-    {label = "diablous2", category = "motorcycles", price = 1000},
-    {label = "double", category = "motorcycles", price = 1000},
-    {label = "enduro", category = "motorcycles", price = 1000},
-    {label = "esskey", category = "motorcycles", price = 1000},
-    {label = "faggio", category = "motorcycles", price = 1000},
-    {label = "faggio2", category = "motorcycles", price = 1000},
-    {label = "faggio3", category = "motorcycles", price = 1000},
-    {label = "fcr", category = "motorcycles", price = 1000},
-    {label = "fcr2", category = "motorcycles", price = 1000},
-    {label = "gargoyle", category = "motorcycles", price = 1000},
-    {label = "hakuchou", category = "motorcycles", price = 1000},
-    {label = "hakuchou2", category = "motorcycles", price = 1000},
-    {label = "hexer", category = "motorcycles", price = 1000},
-    {label = "innovation", category = "motorcycles", price = 1000},
-    {label = "lectro", category = "motorcycles", price = 1000},
-    {label = "manchez", category = "motorcycles", price = 1000},
-    {label = "nemesis", category = "motorcycles", price = 1000},
-    {label = "nightblade", category = "motorcycles", price = 1000},
-    {label = "pcj", category = "motorcycles", price = 1000},
-    {label = "powersurge", category = "motorcycles", price = 1000},
-    {label = "ruffian", category = "motorcycles", price = 1000},
-    {label = "rrocket", category = "motorcycles", price = 1000},
-    {label = "sanchez", category = "motorcycles", price = 1000},
-    {label = "sanchez2", category = "motorcycles", price = 1000},
-    {label = "sanctus", category = "motorcycles", price = 1000},
-    {label = "sovereign", category = "motorcycles", price = 1000},
-    {label = "stryder", category = "motorcycles", price = 1000},
-    {label = "thrust", category = "motorcycles", price = 1000},
-    {label = "vader", category = "motorcycles", price = 1000},
-    {label = "vindicator", category = "motorcycles", price = 1000},
-    {label = "vortex", category = "motorcycles", price = 1000},
-    {label = "wolfsbane", category = "motorcycles", price = 1000},
-    {label = "zombiea", category = "motorcycles", price = 1000},
-    {label = "zombieb", category = "motorcycles", price = 1000},
     --Muscle
     {label = "blade", category = "muscle", price = 1000},
     {label = "buccaneer", category = "muscle", price = 1000},
