@@ -1,0 +1,27 @@
+{
+    "interact_marker": "Tryk på ~INPUT_PICKUP~ for at interagere",
+    "cardealer_action_cardealer": "Handling Bilforhandler",
+    "cardealer_vehicle_saved": "Gemte Køretøjer",
+    "cardealer_buy_vehicle": "Køb Køretøj",
+    "cardealer_vehicle_purchased": "Købte Køretøjer",
+    "cardealer_action_vehicle_saved_show": "Vis Køretøj",
+    "cardealer_action_vehicle_saved_sell": "Sælg Køretøj",
+    "cardealer_action_vehicle_saved_return": "Returnér køretøjet",
+
+    "px_vehicleshop_vehicle_categories": "Køretøjskategorier",
+    "px_vehicleshop_vehicle_list": "Køretøjsliste",
+    "px_vehicleshop_vehicle_info": "Køretøjsinfo",
+    "px_vehicleshop_test_drive": "Prøvekørsel",
+    "px_vehicleshop_buy_vehicle": "Køb Køretøj",
+    "px_vehicleshop_notify": "Køretøjsbutik",
+    "px_vehicleshop_notify_test_drive": "Prøvekørsel ikke tilgængelig",
+    "px_vehicleshop_no_money": "Du har ikke nok penge",
+    "cardealer_alert_return_vehicle_header": "Er du sikker på, at du vil returnere køretøjet til leverandøren?",
+    "cardealer_alert_return_vehicle_content": "Du vil modtage 50% af købsprisen",
+    "px_vehicleshop_select_color": "Vælg Farve",
+    "px_vehicleshop_textui_test_drive": "Tid tilbage %s sekunder",
+    "px_vehicleshop_traction": "Trækkraft",
+    "px_vehicleshop_brakes": "Bremser",
+    "px_vehicleshop_maxspeed": "Maksimal Hastighed",
+    "px_vehicleshop_acceleration": "Acceleration"
+}
