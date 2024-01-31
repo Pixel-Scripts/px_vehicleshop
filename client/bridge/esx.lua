@@ -134,7 +134,9 @@ function OpenVehicleInfo(vehicle, price, vehicleData, job)
                 DeleteEntity(lastSelectedVehicleEntity)
                 lastSelectedVehicleEntity = nil
             end
-            lib.showMenu('openVehicleList')
+            if not buy then
+                lib.showMenu('openVehicleList')
+            end
         end,
     }, function(selected, scrollIndex, args)
         if selected == 1 then
@@ -192,7 +194,10 @@ function OpenVehicleInfo(vehicle, price, vehicleData, job)
                         g = tonumber(g)
                         b = tonumber(b)
                         if input then
+                            lib.hideMenu("openVehicleInfo")
+                            Wait(1000)
                             CamOFF()
+                            Wait(100)
                             BuyVehicle(vehicle, r, g, b, price)
                         end
                     else
@@ -325,8 +330,8 @@ function spawnVehicle(vehicle, job)
     Citizen.CreateThread(function()
         while inCam do
             Wait(0)
-            DisableControlAction(0, 34, true) -- A
-            DisableControlAction(0, 30, true) -- D
+            -- DisableControlAction(0, 34, true) -- A
+            -- DisableControlAction(0, 30, true) -- D
             if IsControlPressed(0, 9) then    -- Right
                 heading = heading + 5
                 SetEntityHeading(lastSelectedVehicleEntity, heading)
@@ -365,7 +370,7 @@ function CamON(job)
     end)
     RenderScriptCams(false, false, 0, 1, 0)
     DestroyCam(cam, false)
-    FreezeEntityPosition(cache.ped, true)
+    -- FreezeEntityPosition(cache.ped, true)
 
     if not DoesCamExist(cam) then
         cam = CreateCam("DEFAULT_SCRIPTED_CAMERA", true)
@@ -381,7 +386,7 @@ function CamON(job)
 end
 
 function CamOFF()
-    FreezeEntityPosition(PlayerPedId(), false)
+    -- FreezeEntityPosition(PlayerPedId(), false)
     RenderScriptCams(false, true, 250, 1, 0)
     DestroyCam(cam, false)
     inCam = false

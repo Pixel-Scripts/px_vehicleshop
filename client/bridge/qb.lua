@@ -154,7 +154,9 @@ function OpenVehicleInfo(vehicle, price, vehicleData, job)
                 DeleteEntity(lastSelectedVehicleEntity)
                 lastSelectedVehicleEntity = nil
             end
-            lib.showMenu('openVehicleList')
+            if not buy then
+                lib.showMenu('openVehicleList')
+            end
         end,
     }, function(selected, scrollIndex, args)
         if selected == 1 then

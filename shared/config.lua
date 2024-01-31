@@ -7,7 +7,7 @@ Config.PositioMenu = "top-right"
 Config.TestDriveCoords = vector3(-889.877, -3205.54, 13.944)
 Config.TestDrive = true
 Config.TestDriveTime = 30 --seconds
-Config.PaymentSystem = "moeny"
+Config.PaymentSystem = "money"
 
 Config.Blip = {
     title = 'Pixel Vehicle Shop',
@@ -18,7 +18,7 @@ Config.Blip = {
 }
 
 Config.Shops = {
-    requiredJob = false,
+    requiredJob = true,
     jobName = 'cardealer',
     gradeBoss = 'Boss',
     bossMenu = vector3(-31.0925, -1106.57, 26.422),
