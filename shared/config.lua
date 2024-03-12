@@ -4,174 +4,180 @@ Config = {}
 Config.EnableDebug = true
 Config.PositioMenu = "top-right"
 
-Config.TestDriveCoords = vector3(-889.877, -3205.54, 13.944)
 Config.TestDrive = true
 Config.TestDriveTime = 30 --seconds
-Config.PaymentSystem = "money"
-
-Config.Blip = {
-    title = 'Pixel Vehicle Shop',
-    color = 5,
-    id = 227,
-    scale = 1.0,
-    coords = vector3(-52.2535, -1095.64, 26.422)
-}
+Config.MarkerDistance = 2.0
+Config.RemoveMoneyCompany = true
 
 Config.Shops = {
-    requiredJob = true,
-    jobName = 'cardealer',
-    gradeBoss = 'Boss',
-    bossMenu = vector3(-31.0925, -1106.57, 26.422),
-    actionjob = vector3(-56.5321, -1099.30, 26.422),
-    showcase = vector3(-57.2338, -1096.80, 26.422),
-    spawnShowCase = vector4(-47.7029, -1096.35, 26.422, 51.839),
-    spawnVehicleBuy = vector3(-35.9530, -1102.17, 26.422),
-    camCoords = vector3(-52.0340, -1092.87, 26.422),
+    cardealer = {
+        -- Blip
+        title = 'Dealership',
+        color = 5,
+        id = 227,
+        scale = 0.8,
+        coords = vector3(-52.2535, -1095.64, 26.422),
+        -- Other
+        requiredJob = false,
+        jobName = 'cardealer',
+        gradeBoss = 'Boss',
+        bossMenu = vector3(-31.0925, -1106.57, 26.422),
+        actionjob = vector3(-56.5321, -1099.30, 26.422),
+        showcase = vector3(-55.3251, -1090.95, 26.422),
+        spawnShowCase = vector4(-47.9474, -1096.73, 26.422, 42.292),
+        spawnVehicleBuy = vector3(-35.9530, -1102.17, 26.422),
+        camCoords = vector3(-52.0340, -1092.87, 26.422),
+        TestDriveCoords = vector3(-889.877, -3205.54, 13.944)
+    },
+    police = {
+        -- Blip
+        title = 'Police Dealership',
+        color = 38,
+        id = 227,
+        scale = 0.8,
+        coords = vector3(418.4895, -1021.34, 29.030),
+        -- Other
+        requiredJob = true,
+        jobName = 'police',
+        gradeBoss = 'boss',
+        bossMenu = vector3(-43.7882, -1116.28, 26.427),
+        actionjob = vector3(417.5868, -1004.78, 29.233),
+        showcase = vector3(421.2276, -1011.13, 29.129),
+        spawnShowCase = vector4(423.9533, -1022.07, 28.929, 92.051),
+        spawnVehicleBuy = vector3(-58.1253, -1116.52, 26.434),
+        camCoords = vector3(414.4416, -1021.23, 29.199),
+        TestDriveCoords = vector3(-889.877, -3205.54, 13.944)
+    },
+    boat = {
+        -- Blip
+        title = 'Boat Dealership',
+        color = 2,
+        id = 427,
+        scale = 0.8,
+        coords = vector3(-754.725, -1504.79, 5.0005),
+        -- Other
+        requiredJob = false,
+        jobName = '',
+        gradeBoss = '',
+        bossMenu = vector3(0, 0, 0),
+        actionjob = vector3(0, 0, 0),
+        showcase = vector3(-755.026, -1507.16, 5.0069),
+        spawnShowCase = vector4(-800.174, -1503.35, -0.474, 113.62),
+        spawnVehicleBuy = vector3(-58.1253, -1116.52, 26.434),
+        camCoords = vector3(-779.257, -1496.29, 1.7786),
+        TestDriveCoords = vector3(-832.4774, -1532.5023, -0.4745)
+    },
+    plane = {
+        -- Blip
+        title = 'Plane Dealership',
+        color = 30,
+        id = 423,
+        scale = 0.8,
+        coords = vector3(-1013.82, -3022.10, 13.945),
+        -- Other
+        requiredJob = false,
+        jobName = '',
+        gradeBoss = '',
+        bossMenu = vector3(0, 0, 0),
+        actionjob = vector3(0, 0, 0),
+        showcase = vector3(-1012.82, -3022.10, 13.945),
+        spawnShowCase = vector4(-977.132, -2995.10, 13.944, 60.736),
+        spawnVehicleBuy = vector3(-58.1253, -1116.52, 26.434),
+        camCoords = vector3(-996.989, -2985.89, 13.945),
+        TestDriveCoords = vector3(-889.877, -3205.54, 13.944)
+    },
 }
 
 Config.Categories = {
-    {label = 'Compacts', name = 'compacts'},
-    {label = 'Sendas', name = 'sendas'},
-    {label = 'SUVs', name = 'suvs'},
-    {label = 'Coupes', name = 'coupes'},
-    {label = 'Muscle', name = 'muscle'},
-    {label = 'Sports Classic', name = 'sportsclassic'},
-    {label = 'Sports', name = 'sports'},
-    {label = 'Super', name = 'super'},
-    {label = 'Motorcycles', name = 'motorcycles'},
-    {label = 'Off-Road', name = 'offroad'},
-    {label = 'Vans', name = 'vans'},
+    cardealer = {
+        { label = 'Compacts',       name = 'compacts' },
+        { label = 'Sendas',         name = 'sendas' },
+        { label = 'SUVs',           name = 'suvs' },
+        { label = 'Coupes',         name = 'coupes' },
+        { label = 'Muscle',         name = 'muscle' },
+        { label = 'Sports Classic', name = 'sportsclassic' },
+        { label = 'Sports',         name = 'sports' },
+        { label = 'Super',          name = 'super' },
+        { label = 'Motorcycles',    name = 'motorcycles' },
+        { label = 'Off-Road',       name = 'offroad' },
+        { label = 'Vans',           name = 'vans' },
+    },
+    police = {
+        { label = "Armored",    name = "armored" },
+        { label = "Car",        name = "car" },
+        { label = "Motorcycle", name = "motorcycle" },
+    },
+    boat = {
+        { label = "Luxury",  name = "luxury" },
+        { label = "Utility", name = "utility" },
+    },
+    plane = {
+        { label = "Luxury",  name = "luxury" },
+        { label = "Utility", name = "utility" },
+    }
 }
 
 Config.Vehicles = {
-    --Compacts
-    {label = "asbo", category = "compacts", price = 1000},
-    {label = "blista", category = "compacts", price = 1000},
-    {label = "brioso", category = "compacts", price = 1000},
-    {label = "club", category = "compacts", price = 1000},
-    {label = "dilettante", category = "compacts", price = 1000},
-    {label = "kanjo", category = "compacts", price = 1000},
-    {label = "issi2", category = "compacts", price = 1000},
-    {label = "panto", category = "compacts", price = 1000},
-    {label = "prairie", category = "compacts", price = 1000},
-    {label = "rhapsody", category = "compacts", price = 1000},
-    {label = "brioso2", category = "compacts", price = 1000},
-    {label = "weevil", category = "compacts", price = 1000},
-    --Coupes
-    {label = "cogcabrio", category = "coupes", price = 1000},
-    {label = "exemplar", category = "coupes", price = 1000},
-    {label = "f620", category = "coupes", price = 1000},
-    {label = "felon", category = "coupes", price = 1000},
-    {label = "felon2", category = "coupes", price = 1000},
-    {label = "jackal", category = "coupes", price = 1000},
-    {label = "oracle", category = "coupes", price = 1000},
-    {label = "oracle2", category = "coupes", price = 1000},
-    {label = "sentinel", category = "coupes", price = 1000},
-    {label = "sentinel2", category = "coupes", price = 1000},
-    {label = "windsor", category = "coupes", price = 1000},
-    {label = "windsor2", category = "coupes", price = 1000},
-    {label = "zion", category = "coupes", price = 1000},
-    {label = "zion2", category = "coupes", price = 1000},
-    {label = "previon", category = "coupes", price = 1000},
-    --Motorcycles
-    {label = "akuma", category = "motorcycles", price = 1000},
-    {label = "avarus", category = "motorcycles", price = 1000},
-    {label = "bagger", category = "motorcycles", price = 1000},
-    {label = "bati", category = "motorcycles", price = 1000},
-    {label = "bati2", category = "motorcycles", price = 1000},
-    {label = "bf400", category = "motorcycles", price = 1000},
-    {label = "carbonrs", category = "motorcycles", price = 1000},
-    {label = "chimera", category = "motorcycles", price = 1000},
-    {label = "cliffhanger", category = "motorcycles", price = 1000},
-    {label = "daemon", category = "motorcycles", price = 1000},
-    --Muscle
-    {label = "blade", category = "muscle", price = 1000},
-    {label = "buccaneer", category = "muscle", price = 1000},
-    {label = "buccaneer2", category = "muscle", price = 1000},
-    {label = "chino", category = "muscle", price = 1000},
-    {label = "chino2", category = "muscle", price = 1000},
-    {label = "clique", category = "muscle", price = 1000},
-    {label = "coquette3", category = "muscle", price = 1000},
-    {label = "deviant", category = "muscle", price = 1000},
-    {label = "dominator", category = "muscle", price = 1000},
-    {label = "dominator2", category = "muscle", price = 1000},
-    {label = "dominator3", category = "muscle", price = 1000},
-    --Off-Road
-    {label = "bfinjection", category = "offroad", price = 1000},
-    {label = "bifta", category = "offroad", price = 1000},
-    {label = "brawler", category = "offroad", price = 1000},
-    {label = "caracara2", category = "offroad", price = 1000},
-    {label = "hellion", category = "offroad", price = 1000},
-    {label = "freecrawler", category = "offroad", price = 1000},
-    {label = "kamacho", category = "offroad", price = 1000},
-    {label = "mesa3", category = "offroad", price = 1000},
-    {label = "rebel", category = "offroad", price = 1000},
-    {label = "rebel2", category = "offroad", price = 1000},
-    --Suvs
-    {label = "baller", category = "suvs", price = 1000},
-    {label = "baller2", category = "suvs", price = 1000},
-    {label = "baller3", category = "suvs", price = 1000},
-    {label = "baller4", category = "suvs", price = 1000},
-    {label = "baller5", category = "suvs", price = 1000},
-    {label = "baller6", category = "suvs", price = 1000},
-    {label = "bjxl", category = "suvs", price = 1000},
-    {label = "cavalcade", category = "suvs", price = 1000},
-    {label = "cavalcade2", category = "suvs", price = 1000},
-    {label = "contender", category = "suvs", price = 1000},
-    --Sedans
-    {label = "asea", category = "sendas", price = 1000},
-    {label = "asterope", category = "sendas", price = 1000},
-    {label = "cog55", category = "sendas", price = 1000},
-    {label = "fugitive", category = "sendas", price = 1000},
-    {label = "glendale", category = "sendas", price = 1000},
-    {label = "glendale2", category = "sendas", price = 1000},
-    {label = "primo2", category = "sendas", price = 1000},
-    {label = "stafford", category = "sendas", price = 1000},
-    {label = "stanier", category = "sendas", price = 1000},
-    {label = "superd", category = "sendas", price = 1000},
-    {label = "asea", category = "sendas", price = 1000},
-    --Sports
-    {label = "alpha", category = "sports", price = 1000},
-    {label = "banshee", category = "sports", price = 1000},
-    {label = "bestiagts", category = "sports", price = 1000},
-    {label = "blista2", category = "sports", price = 1000},
-    {label = "buffalo", category = "sports", price = 1000},
-    {label = "buffalo2", category = "sports", price = 1000},
-    {label = "carbonizzare", category = "sports", price = 1000},
-    {label = "comet2", category = "sports", price = 1000},
-    {label = "comet5", category = "sports", price = 1000},
-    {label = "coquette", category = "sports", price = 1000},
-    --Sports Classic
-    {label = "ardent", category = "sportsclassic", price = 1000},
-    {label = "btype", category = "sportsclassic", price = 1000},
-    {label = "btype2", category = "sportsclassic", price = 1000},
-    {label = "btype3", category = "sportsclassic", price = 1000},
-    {label = "casco", category = "sportsclassic", price = 1000},
-    {label = "cheetah2", category = "sportsclassic", price = 1000},
-    {label = "coquette2", category = "sportsclassic", price = 1000},
-    {label = "deluxo", category = "sportsclassic", price = 1000},
-    {label = "feltzer3", category = "sportsclassic", price = 1000},
-    {label = "gt500", category = "sportsclassic", price = 1000},
-    --Super
-    {label = "adder", category = "super", price = 1000},
-    {label = "autarch", category = "super", price = 1000},
-    {label = "banshee2", category = "super", price = 1000},
-    {label = "bullet", category = "super", price = 1000},
-    {label = "entity2", category = "super", price = 1000},
-    {label = "entityxf", category = "super", price = 1000},
-    {label = "emerus", category = "super", price = 1000},
-    {label = "fmj", category = "super", price = 1000},
-    {label = "furia", category = "super", price = 1000},
-    {label = "nero", category = "super", price = 1000},
-    --Vans
-    {label = "bison", category = "vans", price = 1000},
-    {label = "bison2", category = "vans", price = 1000},
-    {label = "bobcatxl", category = "vans", price = 1000},
-    {label = "boxville2", category = "vans", price = 1000},
-    {label = "burrito2", category = "vans", price = 1000},
-    {label = "burrito3", category = "vans", price = 1000},
-    {label = "burrito4", category = "vans", price = 1000},
-    {label = "camper", category = "vans", price = 1000},
-    {label = "minivan", category = "vans", price = 1000},
-    {label = "pony", category = "vans", price = 1000},
+    -- Vehice Name                Vehicle Model          Vehicle Category            Vehicle Price Dealership
+    { name = "Asbo",              model = "asbo",        category = "compacts",      price = 1000, dealership = "cardealer" },
+    { name = "Blista",            model = "blista",      category = "compacts",      price = 1000, dealership = "cardealer" },
+    { name = "Brioso",            model = "brioso",      category = "compacts",      price = 1000, dealership = "cardealer" },
+    { name = "Cog Cabrio",        model = "cogcabrio",   category = "coupes",        price = 1000, dealership = "cardealer" },
+    { name = "Exemplar",          model = "exemplar",    category = "coupes",        price = 1000, dealership = "cardealer" },
+    { name = "f620",              model = "f620",        category = "coupes",        price = 1000, dealership = "cardealer" },
+    { name = "Akuma",             model = "akuma",       category = "motorcycles",   price = 1000, dealership = "cardealer" },
+    { name = "Avarus",            model = "avarus",      category = "motorcycles",   price = 1000, dealership = "cardealer" },
+    { name = "Bagger",            model = "bagger",      category = "motorcycles",   price = 1000, dealership = "cardealer" },
+    { name = "Blade",             model = "blade",       category = "muscle",        price = 1000, dealership = "cardealer" },
+    { name = "Buccaneer",         model = "buccaneer",   category = "muscle",        price = 1000, dealership = "cardealer" },
+    { name = "Buccaneer2",        model = "buccaneer2",  category = "muscle",        price = 1000, dealership = "cardealer" },
+    { name = "Bfinjection",       model = "bfinjection", category = "offroad",       price = 1000, dealership = "cardealer" },
+    { name = "Bifta",             model = "bifta",       category = "offroad",       price = 1000, dealership = "cardealer" },
+    { name = "Brawler",           model = "brawler",     category = "offroad",       price = 1000, dealership = "cardealer" },
+    { name = "Baller",            model = "baller",      category = "suvs",          price = 1000, dealership = "cardealer" },
+    { name = "Baller2",           model = "baller2",     category = "suvs",          price = 1000, dealership = "cardealer" },
+    { name = "Baller3",           model = "baller3",     category = "suvs",          price = 1000, dealership = "cardealer" },
+    { name = "Asea",              model = "asea",        category = "sendas",        price = 1000, dealership = "cardealer" },
+    { name = "Asterope",          model = "asterope",    category = "sendas",        price = 1000, dealership = "cardealer" },
+    { name = "Cog55",             model = "cog55",       category = "sendas",        price = 1000, dealership = "cardealer" },
+    { name = "Alpha",             model = "alpha",       category = "sports",        price = 1000, dealership = "cardealer" },
+    { name = "Banshee",           model = "banshee",     category = "sports",        price = 1000, dealership = "cardealer" },
+    { name = "Bestia GTS",        model = "bestiagts",   category = "sports",        price = 1000, dealership = "cardealer" },
+    { name = "Ardent",            model = "ardent",      category = "sportsclassic", price = 1000, dealership = "cardealer" },
+    { name = "Btype",             model = "btype",       category = "sportsclassic", price = 1000, dealership = "cardealer" },
+    { name = "Btype2",            model = "btype2",      category = "sportsclassic", price = 1000, dealership = "cardealer" },
+    { name = "Adder",             model = "adder",       category = "super",         price = 1000, dealership = "cardealer" },
+    { name = "Autarch",           model = "autarch",     category = "super",         price = 1000, dealership = "cardealer" },
+    { name = "Banshee2",          model = "banshee2",    category = "super",         price = 1000, dealership = "cardealer" },
+    { name = "Bison",             model = "bison",       category = "vans",          price = 1000, dealership = "cardealer" },
+    { name = "Bison2",            model = "bison2",      category = "vans",          price = 1000, dealership = "cardealer" },
+    { name = "Bobcat",            model = "bobcatxl",    category = "vans",          price = 1000, dealership = "cardealer" },
+
+    -- Police Armored
+    { name = "riot",              model = "Riot",        category = "armored",       price = 1000, dealership = "police" },
+    { name = "riot2",             model = "Riot2",       category = "armored",       price = 1000, dealership = "police" },
+
+    -- Police Car
+    { name = "Police",            model = "police",      category = "car",           price = 1000, dealership = "police" },
+    { name = "Police 2",          model = "police2",     category = "car",           price = 1000, dealership = "police" },
+    { name = "Police 3",          model = "police3",     category = "car",           price = 1000, dealership = "police" },
+
+    --Police Motorcycle
+    { name = "Police Motorcycle", model = "policeb",     category = "motorcycle",    price = 1000, dealership = "police" },
+
+    --Boat Luxury
+    { name = "Marquis",           model = "marquis",     category = "luxury",        price = 1000, dealership = "boat" },
+    { name = "Toro",              model = "toro",        category = "luxury",        price = 1000, dealership = "boat" },
+
+    --Boat Utility
+    { name = "Dinghy2",           model = "dinghy2",     category = "utility",       price = 1000, dealership = "boat" },
+    { name = "Squalo",            model = "squalo",      category = "utility",       price = 1000, dealership = "boat" },
+
+    --Plane Luxury
+    { name = "Luxor",             model = "luxor",       category = "luxury",        price = 1000, dealership = "plane" },
+    { name = "Luxor2",            model = "luxor2",      category = "luxury",        price = 1000, dealership = "plane" },
+
+    --Plane Utility
+    { name = "Mammatus",          model = "mammatus",    category = "utility",       price = 1000, dealership = "plane" },
+    { name = "Cuban800",          model = "cuban800",    category = "utility",       price = 1000, dealership = "plane" },
 }
