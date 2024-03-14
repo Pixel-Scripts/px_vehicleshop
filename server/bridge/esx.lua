@@ -35,7 +35,6 @@ AddEventHandler('px_vehicleshop:setVehicle', function(vehicleProps, vehicleType,
     debug(price)
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source)
-    xPlayer.removeAccountMoney(Config.PaymentSystem, tonumber(price))
     MySQL.Sync.execute(
         'INSERT INTO owned_vehicles (owner, plate, vehicle, stored, type) VALUES (@owner, @plate, @vehicle, @stored, @type)',
         {
@@ -78,7 +77,7 @@ AddEventHandler('px_vehicleshop:SellVehicle', function(vehicleProps, vehicleType
     local xPlayer = ESX.GetPlayerFromId(_source)
     TriggerClientEvent('ox_lib:notify', xPlayer.source, {
         type = 'success',
-        title = "The vehicle with the license plate " .. vehicleProps.plate .. " and now your property",
+        title = locale("px_notify_sell") .. vehicleProps.plate,
         position = 'top',
         description = '',
         5000
@@ -93,4 +92,29 @@ AddEventHandler('px_vehicleshop:SellVehicle', function(vehicleProps, vehicleType
             ['type']     = vehicleType
         }, function()
         end)
+end)
+
+RegisterServerEvent("px_vehicleshop:returnVehicle", function(vehicle, price, k, action)
+    local loadFile = LoadResourceFile(GetCurrentResourceName(), "./vehicleSaved.json ")
+    if loadFile ~= nil then
+        local returnPrice = price * 50 / 100
+        local extract = json.decode(loadFile)
+        if type(extract) == "table" then
+            for _, v in ipairs(extract) do
+                if v.name == vehicle then
+                    if v.job == action then
+                        debug(v.coords)
+                        debug(k)
+                        table.remove(extract, k)
+                        SaveResourceFile(GetCurrentResourceName(), "vehicleSaved.json",
+                            json.encode(extract, { indent = true }), -1)
+                        Wait(100)
+                        TriggerEvent('esx_addonaccount:getSharedAccount', 'society_' .. action, function(account)
+                            account.addMoney(returnPrice)
+                        end)
+                    end
+                end
+            end
+        end
+    end
 end)

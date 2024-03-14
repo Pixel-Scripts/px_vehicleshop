@@ -2,17 +2,7 @@ QBCore = GetResourceState('qb-core'):find('start') and exports['qb-core']:GetCor
 
 if not QBCore then return end
 
--- lib.callback.register('px_vehicleshop:getPlayerMoney', function(source, price)
---     local src = source
---     local xPlayer = QBCore.Functions.GetPlayer(src)
---     debug(xPlayer)
---     local xPlayerMoney = xPlayer.PlayerData.money[Config.PaymentSystem]
---     debug(xPlayerMoney)
---     if tonumber(xPlayerMoney) >= tonumber(price) then return true else return false end
--- end)
-
 lib.callback.register('px_vehicleshop:getPlayerMoney', function(source, price, scroll)
-    local xPlayer = QBCore.Functions.GetPlayer(source)
     if scroll == 1 then
         local money = exports.ox_inventory:GetItemCount(source, 'money')
         print(price)
@@ -21,16 +11,10 @@ lib.callback.register('px_vehicleshop:getPlayerMoney', function(source, price, s
             return "cash"
         end
     else
-        exports['qb-banking']:GetAccountBalance(GetPlayerName(source))
-        return "bank"
-    end
-    local xPlayer = QBCore.Functions.GetPlayer(source)
-    local xPlayerMoney = xPlayer.getAccount(PaymentSystem).money
-    if tonumber(xPlayerMoney) >= tonumber(price) then
-        xPlayer.removeAccountMoney(PaymentSystem, price)
-        return PaymentSystem
-    else
-        return false
+        local moneyBank = exports['qb-banking']:GetAccountBalance(GetPlayerName(source))
+        if tonumber(moneyBank) > tonumber(price) then
+            return "bank"
+        end
     end
 end)
 
@@ -51,9 +35,6 @@ AddEventHandler('px_vehicleshopBuyVehicle', function(vehicle, price, action, r, 
     local loadFile = LoadResourceFile(GetCurrentResourceName(), "./vehicleSaved.json")
     if loadFile ~= nil then
         if Config.RemoveMoneyCompany then
-            -- TriggerEvent('esx_addonaccount:getSharedAccount', 'society_' .. action, function(account)
-            --     account.removeMoney(price)
-            -- end)
             exports['qb-banking']:RemoveMoney(job, price)
         end
         local extract = json.decode(loadFile)
@@ -106,7 +87,7 @@ AddEventHandler('px_vehicleshop:SellVehicle', function(vehicle, plate, garage, p
     local xPlayer = QBCore.Functions.GetPlayer(_source)
     TriggerClientEvent('ox_lib:notify', _source, {
         type = 'success',
-        title = "The vehicle with the license plate " .. plate .. " and now your property",
+        title =  title = locale("px_notify_sell") .. plate,
         position = 'top',
         description = '',
         5000

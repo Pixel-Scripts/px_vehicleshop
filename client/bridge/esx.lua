@@ -37,7 +37,7 @@ Citizen.CreateThread(function()
             coords   = v.showcase,
             distance = Config.MarkerDistance,
             onEnter  = function(self)
-                lib.showTextUI('[E] - to open the showroom', {
+                lib.showTextUI(locale("px_textUiShowRoom"), {
                     position = "right-center",
                     icon = 'hand',
                 })
@@ -244,13 +244,13 @@ end
 function SelectPaymentSystem(vehicle, price)
     lib.registerMenu({
         id = 'SelectPaymentSystem',
-        title = "Paga il veicolo",
+        title = locale("px_payVehicle"),
         position = Config.PositioMenu,
         options = {
             {
-                label = "Seleziona il metodo di pagamento",
+                label = locale("px_selectPayamentSystem"),
                 icon = "fa-solid fa-wallet",
-                values = { 'Contanti', 'Carta Di Credito' },
+                values = { locale("px_money"), locale("px_bank") },
             }
         },
         onClose = function()
@@ -495,7 +495,7 @@ function CreateMarkerCardealerAction()
                 coords   = v.actionjob,
                 distance = Config.MarkerDistance,
                 onEnter  = function(self)
-                    lib.showTextUI('[E] - to open the cardealer menu', {
+                    lib.showTextUI(locale("px_textUiCardealer"), {
                         position = "right-center",
                         icon = 'hand',
                     })
@@ -591,7 +591,7 @@ function OpenVehicleSaved()
     else
         lib.notify({
             title = locale("px_vehicleshop_notify"),
-            description = "There are no vehicles in the depot",
+            description = locale("px_notify_noVehicle"),
             type = 'error',
             position = 'top',
         })
@@ -700,7 +700,7 @@ function CreateBossMenuMarker()
                 coords   = v.bossMenu,
                 distance = Config.MarkerDistance,
                 onEnter  = function(self)
-                    lib.showTextUI('[E] - to open the boss menu', {
+                    lib.showTextUI(locale("px_textUiBossMenu"), {
                         position = "right-center",
                         icon = 'hand',
                     })

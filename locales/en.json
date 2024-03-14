@@ -23,5 +23,16 @@
     "px_vehicleshop_traction": "Traction",
     "px_vehicleshop_brakes": "Brakes",
     "px_vehicleshop_maxspeed": "Max Speed",
-    "px_vehicleshop_acceleration": "Acceleration"
+    "px_vehicleshop_acceleration": "Acceleration",
+    "px_payVehicle": "Pay vehicle",
+    "px_selectPayamentSystem": "Select payment method",
+    "px_money": "Money",
+    "px_bank": "Bank",
+
+    "px_textUiShowRoom": "[E] - to open the showroom",
+    "px_textUiCardealer": "[E] - to open the cardealer menu",
+    "px_textUiBossMenu": "[E] - to open the boss menu",
+
+    "px_notify_sell": "The vehicle with the license plate %s and now your property",
+    "px_notify_noVehicle": "There are no vehicles in the depot"
 }
