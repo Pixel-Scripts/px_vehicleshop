@@ -87,7 +87,7 @@ AddEventHandler('px_vehicleshop:SellVehicle', function(vehicle, plate, garage, p
     local xPlayer = QBCore.Functions.GetPlayer(_source)
     TriggerClientEvent('ox_lib:notify', _source, {
         type = 'success',
-        title =  title = locale("px_notify_sell") .. plate,
+        title = locale("px_notify_sell") .. plate,
         position = 'top',
         description = '',
         5000
