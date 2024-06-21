@@ -319,15 +319,19 @@ function StartTestDrive(vehicle)
 
     if not model then return end
 
-    local vehicleTestDrive = CreateVehicle(model, Config.TestDriveCoords, 100.0, 0, 1)
-    debug('Created')
-    SetVehicleNumberPlateText(vehicleTestDrive, "TEST")
-    SetEntityCoords(cache.ped, Config.TestDriveCoords)
-    debug('Tippato')
-    SetPedIntoVehicle(cache.ped, vehicleTestDrive, -1)
-    Wait(1000)
-    DoScreenFadeIn(650)
-    StartTimer()
+    for k,v in pairs(Config.Shops) do
+        if k == valueAction then
+            local vehicleTestDrive = CreateVehicle(model, v.TestDriveCoords, 100.0, 0, 1)
+            debug('Created')
+            SetVehicleNumberPlateText(vehicleTestDrive, "TEST")
+            SetEntityCoords(cache.ped, v.TestDriveCoords)
+            debug('Tippato')
+            SetPedIntoVehicle(cache.ped, vehicleTestDrive, -1)
+            Wait(1000)
+            DoScreenFadeIn(650)
+            StartTimer()
+        end
+    end
     Citizen.CreateThread(function()
         while inTestDrive do
             Wait(5)
