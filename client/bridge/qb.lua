@@ -34,6 +34,7 @@ AddEventHandler('onResourceStop', function(resourceName)
 end)
 
 local lastSelectedVehicleEntity = nil
+local vehicleTestDrive = nil
 local valueAction = nil
 local time = Config.TestDriveTime
 local inTestDrive = false
@@ -334,7 +335,7 @@ function StartTestDrive(vehicle)
             TestDriveCoords = v.TestDriveCoords
         end
     end
-    local vehicleTestDrive = CreateVehicle(model, TestDriveCoords, 100.0, 0, 1)
+    vehicleTestDrive = CreateVehicle(model, TestDriveCoords, 100.0, 0, 1)
     debug('Created')
     SetVehicleNumberPlateText(vehicleTestDrive, "TEST")
     SetEntityCoords(cache.ped, TestDriveCoords)
@@ -366,6 +367,7 @@ function StartTestDrive(vehicle)
                 DoScreenFadeOut(650)
                 Wait(1000)
                 DeleteVehicle(vehicleTestDrive)
+                vehicleTestDrive = nil
                 Wait(100)
                 time = Config.TestDriveTime
                 SetEntityCoords(cache.ped, lastCoordsPlayer)
