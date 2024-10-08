@@ -4,7 +4,7 @@ if not QBCore then return end
 
 lib.callback.register('px_vehicleshop:getPlayerMoney', function(source, price, scroll)
     if scroll == 1 then
-        local money = exports.ox_inventory:GetItemCount(source, 'money')
+        local money = exports.ox_inventory:GetItemCount(source, 'cash')
         print(price)
         print(money)
         if tonumber(money) > tonumber(price) then
