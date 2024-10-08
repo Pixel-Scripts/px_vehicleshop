@@ -26,6 +26,7 @@ AddEventHandler('onResourceStart', function(resourceName)
 end)
 
 local lastSelectedVehicleEntity = nil
+local vehicleTestDrive = nil
 local valueAction = nil
 local time = Config.TestDriveTime
 local inTestDrive = false
@@ -321,7 +322,7 @@ function StartTestDrive(vehicle)
 
     for k,v in pairs(Config.Shops) do
         if k == valueAction then
-            local vehicleTestDrive = CreateVehicle(model, v.TestDriveCoords, 100.0, 0, 1)
+            vehicleTestDrive = CreateVehicle(model, v.TestDriveCoords, 100.0, 0, 1)
             debug('Created')
             SetVehicleNumberPlateText(vehicleTestDrive, "TEST")
             SetEntityCoords(cache.ped, v.TestDriveCoords)
@@ -357,6 +358,7 @@ function StartTestDrive(vehicle)
                 ESX.Game.DeleteVehicle(vehicleTestDrive)
                 Wait(100)
                 time = Config.TestDriveTime
+                vehicleTestDrive = nil
                 SetEntityCoords(cache.ped, lastCoordsPlayer)
                 Wait(1000)
                 DoScreenFadeIn(650)
